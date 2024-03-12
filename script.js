@@ -22,3 +22,12 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 //Closing the modal window
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//Closing the modal window with the ESC key
+document.addEventListener('keydown', function (event) {
+  console.log(event.key);
+
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
